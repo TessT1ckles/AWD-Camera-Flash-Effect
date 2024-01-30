@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+.container {
+    min-height: 100vh;
+    background: url('../img/bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/* FLASHLIGHT EFFECT */
+
+.illumination {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--x) var(--y), transparent -90%, #000 var(--gradient-size));
+    --gradient-size: 10%;
+}
+
+
+/* SNAPSHOT POPUP FRAME */
+
+.frame {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(0px, 190px, 0px) rotate(-5deg);
+    background: url('../img/frame.jpg') no-repeat center center/cover;
+    height: 215px;
+    border: solid 5px #d7b983;
+    transition: all 1s cubic-bezier(0,.37,.21,.91);
+}
+
+.frame.popup {
+    opacity: 1;
+    transform: translate3d(0px, 150px, 0px) rotate(-5deg);
+    transition: all 1s cubic-bezier(0,.37,.21,.91);
+}
